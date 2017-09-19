@@ -1,0 +1,26 @@
+{
+  "name": "watson-tone-analyzer-node",
+  "version": "1.0.0",
+  "description": "watson-tone-analyzer-node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DiegoRampim/watson-tone-analyzer-node.git"
+  },
+  "author": "Diego Rampim",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DiegoRampim/watson-tone-analyzer-node/issues"
+  },
+  "homepage": "https://github.com/DiegoRampim/watson-tone-analyzer-node#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "ejs": "^2.5.7",
+    "express": "^4.15.4",
+    "express-load": "^1.1.16",
+    "watson-developer-cloud": "^2.39.0"
+  }
+}

@@ -1,0 +1,169 @@
+<html>
+    <head>
+        <title>Watson Tone Analyzer</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    </head>
+    <body>
+        <br>
+        <div class="container" align="center">
+            <h2>Tone Analyzer <strong>- IBM Watson</strong></h2>
+        </div>
+
+        <br><br>
+
+        <%if(info.erro){%>
+            <div class="alert alert-danger container" role="alert">
+                <%= info.erro %>
+            </div>
+        <%}%>
+
+
+        <form action="/" method="post">
+
+            <div class="container">
+                <div class="col">
+                    <label>Insira o texto a ser analizado:</label>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                       <textarea class="form-control" id="entrada" name="entrada" rows="6"><%= info.entrada %></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container" style="margin-top: 10px">
+                <div class="row">
+                    <div class="col-10"></div>
+                    <div class="col-2" align="center">
+                        <button type="submit" class="btn btn-primary">Analizar</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+
+        <%if(info.retorno){%>
+
+            <div class="container">
+
+                <h5>Resultados da analize:</h5>
+
+            </div>
+
+            <div class="container">
+
+                <div class="col">
+
+                        <div class="col">
+                            <h6>Emoções</h6>
+                        </div>
+
+                        <div class="row"> <!--Raiva (anger)-->
+
+                            <div class="col-2">
+                                <label>Raiva (anger)</label>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                </div>
+                            </div>
+
+                        </div> <!--Raiva (anger)-->
+
+                        <div class="row"> <!--Medo (fear)-->
+
+                            <div class="col-2">
+                                <label>Medo (fear)</label>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                </div>
+                            </div>
+
+                        </div> <!--Medo (fear)-->
+
+                        <div class="row"> <!--Alegria (joy)-->
+
+                            <div class="col-2">
+                                <label>Alegria (joy)</label>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                </div>
+                            </div>
+
+                        </div> <!--Alegria (joy)-->
+
+                        <div class="row"> <!--Tristeza (sadness)-->
+
+                            <div class="col-2">
+                                <label>Tristeza (sadness)</label>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                </div>
+                            </div>
+
+                        </div> <!--Tristeza (sadness)-->
+
+                        <div class="row"> <!--Disgosto(disgust)-->
+
+                            <div class="col-2">
+                                <label>Disgosto (disgust)</label>
+                            </div>
+
+                            <div class="col-5">
+                                <div class="progress">
+                                    <div class="progress-bar progress-bar-striped bg-danger"
+                                         role="progressbar" aria-valuemin="0" aria-valuemax="100"
+                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                </div>
+                            </div>
+
+                        </div> <!--Disgosto(disgust)-->
+
+                    </div>
+
+            </div>
+
+
+        <%}%>
+
+
+
+        <div class="footer">
+
+            <div class="row">
+                <div class="col" align="center">
+                    <a href="https://www.linkedin.com/in/diego-luiz-ornelas-rampim-b76aa0ab/"
+                          class="text-muted">developer by <strong>Diego Rampim</strong></a>
+                    <a> - </a>
+                    <a href="https://www.ibm.com/watson/services/language-translator/"
+                       class="text-muted">powered by <strong>IBM WATSON - Language Translator</strong></a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </body>
+</html>
