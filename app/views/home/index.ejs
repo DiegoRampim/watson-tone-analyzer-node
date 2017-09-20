@@ -21,14 +21,14 @@
         <form action="/" method="post">
 
             <div class="container">
-                <div class="col">
-                    <label>Insira o texto a ser analizado:</label>
+                <div class="col-8">
+                    <label>Insira o texto a ser analisado: (*Para uma análise mais assertiva, utilize textos em inglês)</label>
                 </div>
             </div>
 
             <div class="container">
                 <div class="row">
-                    <div class="col">
+                    <div class="col-12">
                        <textarea class="form-control" id="txtEntrada" name="txtEntrada" rows="6"><%= info.txtEntrada %></textarea>
                     </div>
                 </div>
@@ -38,7 +38,7 @@
                 <div class="row">
                     <div class="col-10"></div>
                     <div class="col-2" align="center">
-                        <button type="submit" class="btn btn-primary">Analizar</button>
+                        <button type="submit" class="btn btn-primary">Analisar</button>
                     </div>
                 </div>
             </div>
@@ -49,7 +49,7 @@
 
             <div class="container">
 
-                <h5>Resultados da analize:</h5>
+                <h5>Resultados da análise:</h5>
 
             </div>
 
@@ -125,10 +125,10 @@
 
                         </div> <!--Tristeza (sadness)-->
 
-                        <div class="row"> <!--Disgosto(disgust)-->
+                        <div class="row"> <!--Desgosto(disgust)-->
 
                             <div class="col-2">
-                                <label>Disgosto (disgust)</label>
+                                <label>Desgosto (disgust)</label>
                             </div>
 
                             <div class="col-5">
@@ -139,7 +139,7 @@
                                 </div>
                             </div>
 
-                        </div> <!--Disgosto(disgust)-->
+                        </div> <!--Desgosto(disgust)-->
 
                     </div>
 
@@ -150,7 +150,7 @@
 
 
 
-        <div class="footer">
+        <div class="footer" style=" position:absolute; bottom:0; width: 95%;">
 
             <div class="row">
                 <div class="col" align="center">

@@ -1,9 +1,11 @@
 var ToneAnalyzerV3 = require('watson-developer-cloud/tone-analyzer/v3');
 
 var tone_analyzer = new ToneAnalyzerV3({
-    username: "5c51bc08-5fd5-4eee-980b-d3004bfca781",
-    password: "bq7NdReNXta8",
+
+    username: process.env.USER_TONE_ANALYZER,
+    password: process.env.PASS_TONE_ANALYZER,
     version_date: '2016-05-19'
+
 });
 
 // var params = {'text': 'Eu estou muito nervoso', 'tones': 'emotion'};
