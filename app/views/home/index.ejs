@@ -29,7 +29,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col">
-                       <textarea class="form-control" id="entrada" name="entrada" rows="6"><%= info.entrada %></textarea>
+                       <textarea class="form-control" id="txtEntrada" name="txtEntrada" rows="6"><%= info.txtEntrada %></textarea>
                     </div>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped bg-danger"
                                          role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                         style="width:<%=info.raiva%>%" aria-valuenow=<%=info.raiva%> > <%=info.raiva%>%</div>
                                 </div>
                             </div>
 
@@ -87,7 +87,7 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped bg-danger"
                                          role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                         style="width: <%= info.medo %>%" aria-valuenow=<%= info.medo %> ><%= info.medo %>%</div>
                                 </div>
                             </div>
 
@@ -103,7 +103,7 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped bg-danger"
                                          role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                         style="width: <%= info.alegria %>%" aria-valuenow=<%= info.alegria %> ><%= info.alegria %>%</div>
                                 </div>
                             </div>
 
@@ -119,7 +119,7 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped bg-danger"
                                          role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                         style="width: <%= info.tristeza %>%" aria-valuenow=<%= info.tristeza %> ><%= info.tristeza %>%</div>
                                 </div>
                             </div>
 
@@ -135,7 +135,7 @@
                                 <div class="progress">
                                     <div class="progress-bar progress-bar-striped bg-danger"
                                          role="progressbar" aria-valuemin="0" aria-valuemax="100"
-                                         style="width: 40%" aria-valuenow="40" >40%</div>
+                                         style="width: <%= info.disgosto %>%" aria-valuenow=<%= info.disgosto %> ><%= info.disgosto %>%</div>
                                 </div>
                             </div>
 

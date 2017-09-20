@@ -6,16 +6,12 @@ var tone_analyzer = new ToneAnalyzerV3({
     version_date: '2016-05-19'
 });
 
-var params = {
-    // Get the text from the JSON file.
-    text: 'Eu estou muito nervoso',
-    tones: 'emotion' //Filtro de retornos
-};
+// var params = {'text': 'Eu estou muito nervoso', 'tones': 'emotion'};
 
 function ToneAnalyzer() {}
 
-ToneAnalyzer.prototype.analizar = function (params, callback) {
-    tone_analyzer.tone(params, callback);
+ToneAnalyzer.prototype.analizar = function (item, callback) {
+    tone_analyzer.tone({text: item.txtEntrada, tones: 'emotion'}, callback);
 }
 
 module.exports = function () {
