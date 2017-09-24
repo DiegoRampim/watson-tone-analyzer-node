@@ -1,11 +1,8 @@
+var path = require("path");
+
 module.exports = function (app) {
 
-    app.get('/', function (req, res) {
-
-        res.render('home/index', {info : {}});
-    }); //app.get ('/')
-
-    app.post('/', function (req, res) {
+    app.post('/analyze', function (req, res) {
 
         var item = req.body;
 
@@ -16,53 +13,49 @@ module.exports = function (app) {
             // console.log(JSON.stringify(results));
 
             if(err){
-                item.retorno = false;
-            }else {
-                item.retorno = true;
-
-                for(var i = 0; i <= 4; i++){
-
-                    var sentimento = results.document_tone.tone_categories[0].tones[i].tone_id;
-
-                    // console.log(sentimento);
-
-                    switch (sentimento){
-                        case "anger" :
-                                item.raiva = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
-                            break;
-
-                        case "fear" :
-                                item.medo = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
-                            break;
-
-                        case "joy" :
-                                item.alegria = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
-                            break;
-
-                        case "sadness" :
-                                item.tristeza = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
-                            break;
-
-                        case "disgust" :
-                                item.disgosto = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
-                            break;
-                    }
-                }
-
-
-                // item.medo = ((results.document_tone.tone_categories[0].tones[1].score) * 100).toFixed(0);
-                // item.alegria = ((results.document_tone.tone_categories[0].tones[2].score) * 100).toFixed(0);
-                // item.tristeza = ((results.document_tone.tone_categories[0].tones[3].score) * 100).toFixed(0);
-                // item.disgosto = ((results.document_tone.tone_categories[0].tones[4].score) * 100).toFixed(0);
-
-
+                console.error(err);
+                res.status(500);
+                res.json({"message":"Ocorreu um erro"});
+                return;
             }
 
 
+            for(var i = 0; i <= 4; i++){
 
-            res.render('home/index', {info : item});
+                var sentimento = results.document_tone.tone_categories[0].tones[i].tone_id;
 
+                // console.log(sentimento);
+
+                switch (sentimento){
+                    case "anger" :
+                            item.raiva = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
+                        break;
+
+                    case "fear" :
+                            item.medo = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
+                        break;
+
+                    case "joy" :
+                            item.alegria = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
+                        break;
+
+                    case "sadness" :
+                            item.tristeza = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
+                        break;
+
+                    case "disgust" :
+                            item.desgosto = ((results.document_tone.tone_categories[0].tones[i].score) * 100).toFixed(0);
+                        break;
+                }
+            }
+
+
+            // item.medo = ((results.document_tone.tone_categories[0].tones[1].score) * 100).toFixed(0);
+            // item.alegria = ((results.document_tone.tone_categories[0].tones[2].score) * 100).toFixed(0);
+            // item.tristeza = ((results.document_tone.tone_categories[0].tones[3].score) * 100).toFixed(0);
+            // item.disgosto = ((results.document_tone.tone_categories[0].tones[4].score) * 100).toFixed(0);
+
+            res.json(item);
         });
-    }); //app.post('/')
-
+    });
 }
